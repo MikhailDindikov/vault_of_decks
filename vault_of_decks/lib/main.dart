@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await VaultHran.vauuuult();
   VaultJokers.initJokers();
-  await VaultHran.vaultHran!.clear();
+  //await VaultHran.vaultHran!.clear();
   if (VaultHran.vaultHran!.getString('vaultSelTag') == null) {
     await VaultHran.vaultHran!.setInt('vaultLvl', 0);
     await VaultHran.vaultHran!.setString('vaultSelTag', 'start');
@@ -21,11 +21,11 @@ void main() async {
   await Apphud.start(apiKey: 'app_GPhKpEJPJnE67zUo2mUfsxT4h4hFya');
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(const MyApp());
+  runApp(const VaultApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({
+class VaultApp extends StatelessWidget {
+  const VaultApp({
     super.key,
   });
 

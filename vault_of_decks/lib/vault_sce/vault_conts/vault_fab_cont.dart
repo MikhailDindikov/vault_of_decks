@@ -242,8 +242,8 @@ class VaultFabCont extends GetxController {
 
   List<CardModel?> _genVaults() {
     List<CardModel?> vaulList = [];
-    for (int afnjnsd = 0; afnjnsd < 4; afnjnsd++) {
-      final newVault = _genOneVault(afnjnsd);
+    for (int afnjnsdVault = 0; afnjnsdVault < 4; afnjnsdVault++) {
+      final newVault = _genOneVault(afnjnsdVault);
       if (newVault == null) {
         vaulList.add(null);
       } else {
@@ -266,9 +266,9 @@ class VaultFabCont extends GetxController {
   }
 
   CardModel? _genOneVault(int videx) {
-    final ranVa = vaultRand.nextInt(100);
+    final ranVaVault = vaultRand.nextInt(100);
     final spacer = (347 - 26 - 52 * 4) / 3;
-    if (ranVa < 5) {
+    if (ranVaVault < 5) {
       return CardModel(
           cardPath: VaultResources.dc,
           cardType: CardTupe.dead,
@@ -277,7 +277,7 @@ class VaultFabCont extends GetxController {
           isOnBack: false,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 10) {
+    } else if (ranVaVault < 10) {
       return CardModel(
           cardPath: VaultResources.rj,
           cardType: CardTupe.rjoker,
@@ -286,7 +286,7 @@ class VaultFabCont extends GetxController {
           isOnBack: false,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 15) {
+    } else if (ranVaVault < 15) {
       return CardModel(
           cardPath: VaultResources.bj,
           cardType: CardTupe.bjoker,
@@ -295,7 +295,7 @@ class VaultFabCont extends GetxController {
           isOnBack: false,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 30) {
+    } else if (ranVaVault < 30) {
       final ranVaultInd = vaultRand.nextInt(9);
       final ranIsBack = vaultRand.nextInt(10);
 
@@ -307,7 +307,7 @@ class VaultFabCont extends GetxController {
           isOnBack: ranIsBack < 2,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 45) {
+    } else if (ranVaVault < 45) {
       final ranVaultInd = vaultRand.nextInt(9);
       final ranIsBack = vaultRand.nextInt(10);
 
@@ -319,7 +319,7 @@ class VaultFabCont extends GetxController {
           isOnBack: ranIsBack < 2,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 60) {
+    } else if (ranVaVault < 60) {
       final ranVaultInd = vaultRand.nextInt(9);
       final ranIsBack = vaultRand.nextInt(10);
 
@@ -331,7 +331,7 @@ class VaultFabCont extends GetxController {
           isOnBack: ranIsBack < 2,
           cardPos: Offset(13 + 26 * (videx + 1) + videx * (spacer + 26), 0),
           cardFabPos: videx);
-    } else if (ranVa < 75) {
+    } else if (ranVaVault < 75) {
       final ranVaultInd = vaultRand.nextInt(9);
       final ranIsBack = vaultRand.nextInt(10);
 
@@ -351,25 +351,25 @@ class VaultFabCont extends GetxController {
   void onSwipeCard(CardModel vault, Swipe cardSwipe) {
     if (cardSwipe == Swipe.toLeft && vault.cardFabPos != 0) {
       VaultMus.musVaultOne('mus/swipe.mp3');
-      final fabrikNeigh = vaultCards.firstWhereOrNull((element) =>
+      final fabrikNeighVault = vaultCards.firstWhereOrNull((element) =>
           element == null
               ? false
               : element.cardPos.dy == vault.cardPos.dy &&
                   vault.cardFabPos - element.cardFabPos == 1);
       _moveLeftCard(vault);
-      if (fabrikNeigh != null) {
-        _moveRightCard(fabrikNeigh);
+      if (fabrikNeighVault != null) {
+        _moveRightCard(fabrikNeighVault);
       }
     } else if (cardSwipe == Swipe.toRight && vault.cardFabPos != 4) {
       VaultMus.musVaultOne('mus/swipe.mp3');
-      final fabrikNeigh = vaultCards.firstWhereOrNull((element) =>
+      final fabrikNeighVault = vaultCards.firstWhereOrNull((element) =>
           element == null
               ? false
               : element.cardPos.dy == vault.cardPos.dy &&
                   -vault.cardFabPos + element.cardFabPos == 1);
       _moveRightCard(vault);
-      if (fabrikNeigh != null) {
-        _moveLeftCard(fabrikNeigh);
+      if (fabrikNeighVault != null) {
+        _moveLeftCard(fabrikNeighVault);
       }
     }
   }

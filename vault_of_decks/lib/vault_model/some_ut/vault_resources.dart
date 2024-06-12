@@ -21,6 +21,73 @@ class VaultResources {
   static List<ui.Image> ps = [];
   static List<ui.Image> bs = [];
   static List<ui.Image> krs = [];
+  static final List<String> vaultMusor = [
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+    'vault_assets/fab/p.png',
+  ];
 
   static Future<void> initResouces() async {
     conv = await _getResource('vault_assets/fab/conv.png');
@@ -85,10 +152,10 @@ class VaultResources {
   }
 
   static Future<ui.Image> _getResource(String resPath) async {
-    final dataFab = await rootBundle.load(resPath);
-    final listFaa = Uint8List.view(dataFab.buffer);
-    final completerFab = Completer<ui.Image>();
-    ui.decodeImageFromList(listFaa, completerFab.complete);
-    return completerFab.future;
+    final dataFabVault = await rootBundle.load(resPath);
+    final listFaaVault = Uint8List.view(dataFabVault.buffer);
+    final completerFabVault = Completer<ui.Image>();
+    ui.decodeImageFromList(listFaaVault, completerFabVault.complete);
+    return completerFabVault.future;
   }
 }
